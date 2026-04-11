@@ -40,6 +40,8 @@ I am also an Evidence Synthesis Ireland Fellow (University of Galway, placed at 
 
 My research interests span causal inference (target trial emulation, AIPW, IOSW transportability), NLP for biomedical text, meta-analysis (IPD & aggregate), and reproducible research workflows.
 
+**I am open for research collaborations, evidence synthesis projects, and speaking invitations. Feel free to reach out!**
+
 <div class="container">
   <div class="row justify-content-between">
     <div class="col">

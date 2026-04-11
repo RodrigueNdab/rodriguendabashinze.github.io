@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Rodrigue Ndabashinze # Website name
-baseURL: 'https://rodriguendabashinze.github.io/' # Website URL
+baseURL: 'https://rodriguendabashinze.com/' # Website URL
 
 ############################
 ## LANGUAGE
