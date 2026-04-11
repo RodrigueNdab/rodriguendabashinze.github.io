@@ -1,36 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 — Rodrigue Ndabashinze</title>
-    <meta name="description" content="Page not found." />
-    <meta name="author" content="Rodrigue Ndabashinze" />
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="brand">Rodrigue Ndabashinze</div>
-      <div class="tagline">MD · Epidemiologist · Health Data Scientist</div>
-      <nav class="nav">
-        <a href="/">About</a>
-        <a href="/writing/">Writing</a>
-        <a href="/">Research</a>
-      </nav>
-    </header>
+    <meta name="description" content="Page not found.">
+    <meta name="author" content="Rodrigue Ndabashinze">
 
-    <main>
-      <section class="section">
-        <div class="section-title">404</div>
-        <div class="section-content">
-          <p>That page doesn’t exist. Return to the homepage.</p>
-          <a class="primary" href="/">Go home</a>
+    <!-- Open Graph -->
+    <meta property="og:title" content="404 — Rodrigue Ndabashinze">
+    <meta property="og:description" content="Page not found.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rodriguendabashinze.github.io/">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Dark mode: apply before render to prevent flash -->
+    <script>
+        (function(){
+            var stored = localStorage.getItem('theme');
+            if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        /* Mobile menu transition */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+        #mobile-menu.open { max-height: 400px; }
+    </style>
+</head>
+<body class="bg-[#fafafa] dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-tight dark:text-white">Rodrigue <span class="text-blue-600">N.</span></a>
+
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                <a href="/#about" class="hover:text-blue-600 transition">About</a>
+                <a href="/#experience" class="hover:text-blue-600 transition">Experience</a>
+                <a href="/#publications" class="hover:text-blue-600 transition">Publications</a>
+                <a href="/#skills" class="hover:text-blue-600 transition">Expertise</a>
+                <a href="/#awards" class="hover:text-blue-600 transition">Honours</a>
+                <a href="/#contact" class="hover:text-blue-600 transition">Contact</a>
+                <a href="/writing/" class="hover:text-blue-600 transition">Writing</a>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <button id="theme-toggle" aria-label="Toggle dark mode"
+                    class="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <i id="theme-icon" class="fas fa-moon text-sm"></i>
+                </button>
+                <button id="menu-toggle" aria-label="Open menu"
+                    class="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <i id="menu-icon" class="fas fa-bars text-sm"></i>
+                </button>
+            </div>
         </div>
-      </section>
+
+        <div id="mobile-menu" class="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800">
+            <div class="px-6 py-4 flex flex-col space-y-4 font-semibold text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                <a href="/#about" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">About</a>
+                <a href="/#experience" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Experience</a>
+                <a href="/#publications" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Publications</a>
+                <a href="/#skills" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Expertise</a>
+                <a href="/#awards" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Honours</a>
+                <a href="/#contact" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Contact</a>
+                <a href="/writing/" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Writing</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 404 CONTENT -->
+    <main class="flex-1 flex items-center justify-center px-6 pt-20">
+        <div class="text-center max-w-md">
+            <div class="text-[120px] font-extrabold leading-none tracking-tight mb-4" style="background: linear-gradient(90deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                404
+            </div>
+            <h1 class="text-2xl font-bold mb-3 dark:text-white">Page not found</h1>
+            <p class="text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
+                The page you're looking for doesn't exist or may have been moved. Let's get you back on track.
+            </p>
+            <a href="/" class="inline-flex items-center gap-2 bg-slate-900 dark:bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900 transition-all">
+                <i class="fas fa-arrow-left text-sm"></i>
+                Go home
+            </a>
+        </div>
     </main>
 
-    <footer class="footer">
-      <div>© 2026 Rodrigue Ndabashinze</div>
+    <!-- FOOTER -->
+    <footer class="py-10 px-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-[10px] text-slate-400 dark:text-slate-600 uppercase tracking-[0.3em]">&copy; 2026 Rodrigue Ndabashinze, MD, MSc Epidemiology</p>
+            <div class="flex space-x-6 text-xl text-slate-400 dark:text-slate-500">
+                <a href="https://github.com/RodrigueNdab" target="_blank" rel="noopener" class="hover:text-blue-600 transition"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rodrigue-ndabashinze-md-mph-msc-76093ab5/" target="_blank" rel="noopener" class="hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:rodrigue.ndabashinze@med.uni-rostock.de" class="hover:text-blue-600 transition"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
     </footer>
-  </body>
+
+    <script>
+        // ── Dark mode toggle ──────────────────────────────────────────
+        var themeToggle = document.getElementById('theme-toggle');
+        var themeIcon   = document.getElementById('theme-icon');
+
+        function applyTheme(dark) {
+            if (dark) {
+                document.documentElement.classList.add('dark');
+                themeIcon.className = 'fas fa-sun text-sm';
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIcon.className = 'fas fa-moon text-sm';
+            }
+        }
+
+        applyTheme(document.documentElement.classList.contains('dark'));
+
+        themeToggle.addEventListener('click', function () {
+            var isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            applyTheme(!isDark);
+        });
+
+        // ── Mobile menu ───────────────────────────────────────────────
+        var menuToggle = document.getElementById('menu-toggle');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var menuIcon   = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', function () {
+            var isOpen = mobileMenu.classList.contains('open');
+            mobileMenu.classList.toggle('open', !isOpen);
+            menuIcon.className = isOpen ? 'fas fa-bars text-sm' : 'fas fa-times text-sm';
+        });
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            menuIcon.className = 'fas fa-bars text-sm';
+        }
+    </script>
+</body>
 </html>

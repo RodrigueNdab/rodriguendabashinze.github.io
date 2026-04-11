@@ -1,50 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing — Rodrigue Ndabashinze</title>
-    <meta name="description" content="Writing and notes by Rodrigue Ndabashinze." />
-    <meta name="author" content="Rodrigue Ndabashinze" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,500;8..60,700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="brand">Rodrigue Ndabashinze, MD</div>
-      <div class="tagline">Epidemiologist · Health Data Scientist</div>
-      <nav class="top-nav">
-        <a href="/">Home</a>
-        <a href="/writing/">Writing</a>
-      </nav>
-    </header>
+    <meta name="description" content="Writing and notes by Rodrigue Ndabashinze — epidemiologist, health data scientist, and evidence synthesis researcher.">
+    <meta name="author" content="Rodrigue Ndabashinze">
 
-    <main class="layout">
-      <aside class="toc">
-        <div class="toc-title">Writing</div>
-        <a href="/">About</a>
-        <a href="#posts">Posts</a>
-        <a href="#notes">Notes</a>
-      </aside>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Writing — Rodrigue Ndabashinze">
+    <meta property="og:description" content="Writing and notes by Rodrigue Ndabashinze — epidemiologist, health data scientist, and evidence synthesis researcher.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rodriguendabashinze.github.io/writing/">
+    <meta name="twitter:card" content="summary">
 
-      <section class="content">
-        <h2 id="posts">Posts</h2>
-        <ul class="plain-list">
-          <li>How to Build a Personal Webpage from Scratch</li>
-          <li>Notes on reproducible data pipelines</li>
-          <li>Practical checklists for data QA</li>
-        </ul>
+    <!-- Dark mode: apply before render to prevent flash -->
+    <script>
+        (function(){
+            var stored = localStorage.getItem('theme');
+            if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
 
-        <h2 id="notes">Notes</h2>
-        <ul class="plain-list">
-          <li>Template-free site design</li>
-          <li>Deploying static pages with minimal tooling</li>
-        </ul>
-      </section>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        /* Mobile menu transition */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+        #mobile-menu.open { max-height: 400px; }
+    </style>
+</head>
+<body class="bg-[#fafafa] dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-tight dark:text-white">Rodrigue <span class="text-blue-600">N.</span></a>
+
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                <a href="/#about" class="hover:text-blue-600 transition">About</a>
+                <a href="/#experience" class="hover:text-blue-600 transition">Experience</a>
+                <a href="/#publications" class="hover:text-blue-600 transition">Publications</a>
+                <a href="/#skills" class="hover:text-blue-600 transition">Expertise</a>
+                <a href="/#awards" class="hover:text-blue-600 transition">Honours</a>
+                <a href="/#contact" class="hover:text-blue-600 transition">Contact</a>
+                <a href="/writing/" class="text-blue-600">Writing</a>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <button id="theme-toggle" aria-label="Toggle dark mode"
+                    class="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <i id="theme-icon" class="fas fa-moon text-sm"></i>
+                </button>
+                <button id="menu-toggle" aria-label="Open menu"
+                    class="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <i id="menu-icon" class="fas fa-bars text-sm"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800">
+            <div class="px-6 py-4 flex flex-col space-y-4 font-semibold text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                <a href="/#about" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">About</a>
+                <a href="/#experience" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Experience</a>
+                <a href="/#publications" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Publications</a>
+                <a href="/#skills" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Expertise</a>
+                <a href="/#awards" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Honours</a>
+                <a href="/#contact" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Contact</a>
+                <a href="/writing/" class="text-blue-600 py-1" onclick="closeMenu()">Writing</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="flex-1 pt-28 pb-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="mb-12">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 text-xs font-bold uppercase tracking-widest mb-4">Words &amp; Ideas</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Writing</h1>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Posts and notes on epidemiology, data science, reproducible research, and building things on the web.</p>
+            </div>
+
+            <!-- Posts -->
+            <section id="posts" class="mb-16">
+                <h2 class="text-xs font-bold text-blue-600 uppercase tracking-[0.2em] mb-6">Posts</h2>
+                <ul class="space-y-4">
+                    <li class="group p-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:shadow-md transition cursor-pointer">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white group-hover:text-blue-600 transition mb-1">How to Build a Personal Webpage from Scratch</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">A step-by-step guide to creating a professional personal website with HTML, Tailwind CSS, and GitHub Pages — no build tools required.</p>
+                            </div>
+                            <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-blue-500 transition mt-1 flex-shrink-0"></i>
+                        </div>
+                    </li>
+                    <li class="group p-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:shadow-md transition cursor-pointer">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white group-hover:text-blue-600 transition mb-1">Notes on Reproducible Data Pipelines</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Practical patterns for building data pipelines in R and Python that are transparent, reproducible, and easy to maintain for clinical research projects.</p>
+                            </div>
+                            <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-blue-500 transition mt-1 flex-shrink-0"></i>
+                        </div>
+                    </li>
+                    <li class="group p-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:shadow-md transition cursor-pointer">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white group-hover:text-blue-600 transition mb-1">Practical Checklists for Data Quality Assurance</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Field-tested checklists to validate incoming data, detect anomalies early, and maintain data integrity in epidemiological studies.</p>
+                            </div>
+                            <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-blue-500 transition mt-1 flex-shrink-0"></i>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Notes -->
+            <section id="notes">
+                <h2 class="text-xs font-bold text-blue-600 uppercase tracking-[0.2em] mb-6">Notes</h2>
+                <ul class="space-y-4">
+                    <li class="group p-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:shadow-md transition cursor-pointer">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white group-hover:text-blue-600 transition mb-1">Template-Free Site Design</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Why building your personal site without a template teaches you more about design and typography than any framework.</p>
+                            </div>
+                            <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-blue-500 transition mt-1 flex-shrink-0"></i>
+                        </div>
+                    </li>
+                    <li class="group p-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:shadow-md transition cursor-pointer">
+                        <div class="flex items-start justify-between gap-4">
+                            <div>
+                                <h3 class="font-bold text-lg dark:text-white group-hover:text-blue-600 transition mb-1">Deploying Static Pages with Minimal Tooling</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">A simple guide to publishing HTML/CSS/JS sites on GitHub Pages without npm, Webpack, or any build system.</p>
+                            </div>
+                            <i class="fas fa-arrow-right text-slate-300 dark:text-slate-600 group-hover:text-blue-500 transition mt-1 flex-shrink-0"></i>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
     </main>
 
-    <footer class="footer">© 2026 Rodrigue Ndabashinze</footer>
-  </body>
+    <!-- FOOTER -->
+    <footer class="py-10 px-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-[10px] text-slate-400 dark:text-slate-600 uppercase tracking-[0.3em]">&copy; 2026 Rodrigue Ndabashinze, MD, MSc Epidemiology</p>
+            <div class="flex space-x-6 text-xl text-slate-400 dark:text-slate-500">
+                <a href="https://github.com/RodrigueNdab" target="_blank" rel="noopener" class="hover:text-blue-600 transition"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rodrigue-ndabashinze-md-mph-msc-76093ab5/" target="_blank" rel="noopener" class="hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:rodrigue.ndabashinze@med.uni-rostock.de" class="hover:text-blue-600 transition"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Dark mode toggle ──────────────────────────────────────────
+        var themeToggle = document.getElementById('theme-toggle');
+        var themeIcon   = document.getElementById('theme-icon');
+
+        function applyTheme(dark) {
+            if (dark) {
+                document.documentElement.classList.add('dark');
+                themeIcon.className = 'fas fa-sun text-sm';
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIcon.className = 'fas fa-moon text-sm';
+            }
+        }
+
+        applyTheme(document.documentElement.classList.contains('dark'));
+
+        themeToggle.addEventListener('click', function () {
+            var isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            applyTheme(!isDark);
+        });
+
+        // ── Mobile menu ───────────────────────────────────────────────
+        var menuToggle = document.getElementById('menu-toggle');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var menuIcon   = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', function () {
+            var isOpen = mobileMenu.classList.contains('open');
+            mobileMenu.classList.toggle('open', !isOpen);
+            menuIcon.className = isOpen ? 'fas fa-bars text-sm' : 'fas fa-times text-sm';
+        });
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            menuIcon.className = 'fas fa-bars text-sm';
+        }
+    </script>
+</body>
 </html>
