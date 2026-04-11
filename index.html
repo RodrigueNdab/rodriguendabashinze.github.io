@@ -1,115 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Rodrigue Ndabashinze</title>
-    <meta name="description" content="Rodrigue Ndabashinze — MD, Epidemiologist, Health Data Scientist." />
-    <meta name="author" content="Rodrigue Ndabashinze" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,500;8..60,700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="brand">Rodrigue Ndabashinze, MD</div>
-      <div class="tagline">Epidemiologist · Health Data Scientist</div>
-      <nav class="top-nav">
-        <a href="#news">News</a>
-        <a href="#papers">Selected papers</a>
-        <a href="#writing">Writing</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodrigue Ndabashinze | Personal Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 transition-colors duration-300">
 
-    <main class="layout">
-      <aside class="toc">
-        <div class="toc-title">On this page</div>
-        <a href="#news">News</a>
-        <a href="#papers">Selected papers</a>
-        <a href="#writing">Writing</a>
-        <a href="#links">Profiles</a>
-        <a href="#contact">Contact</a>
-      </aside>
-
-      <section class="content">
-        <div class="hero">
-          <h1>Building clear evidence from complex health data.</h1>
-          <p>
-            MD doctor, epidemiologist, and health data scientist focused on infectious diseases,
-            clinical research, and reproducible evidence synthesis.
-          </p>
-          <div class="keyword-row">
-            <span>Rodrigue Ndabashinze</span>
-            <span>epidemiology</span>
-            <span>infectious diseases</span>
-            <span>health data science</span>
-            <span>evidence synthesis</span>
-          </div>
-          <div class="profile-links" id="links">
-            <a href="https://www.linkedin.com/in/rodrigue-ndabashinze-md-mph-msc-76093ab5/?originalSubdomain=de">LinkedIn</a>
-            <a href="https://scholar.google.com/citations?hl=en&user=nyuAn_kAAAAJ">Google Scholar</a>
-            <a href="https://www.researchgate.net/profile/Rodrigue-Ndabashinze">ResearchGate</a>
-            <a href="https://github.com/RodrigueNdab">GitHub</a>
-          </div>
+    <nav class="fixed w-full z-50 top-0 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tighter">RODRIGUE N.</a>
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#research" class="hover:text-blue-600 transition">Research</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 transition">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
+    </nav>
 
-        <h2 id="news">News</h2>
-        <p>Selected updates on ongoing work and collaborations.</p>
-        <ul class="plain-list">
-          <li>Evidence Synthesis Ireland fellowship: <a href="https://evidencesynthesisireland.ie/fellows/dr-rodrigue-ndabashinze/">profile</a></li>
-          <li>University of Rostock research team: <a href="https://kjpp.med.uni-rostock.de/forschungsteam">page</a></li>
-        </ul>
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Rodrigue Ndabashinze</h1>
+            <p class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Advancing the frontiers of healthcare research, clinical trial analysis, and data-driven medical insights.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#research" class="bg-slate-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition">View My Work</a>
+                <a href="https://github.com/RodrigueNdab" class="border border-slate-300 px-8 py-3 rounded-full font-semibold hover:bg-slate-50 transition">GitHub</a>
+            </div>
+        </div>
+    </section>
 
-        <h2 id="papers">Selected papers</h2>
-        <ol class="papers">
-          <li>
-            <span class="paper-title">First detection of mpox clade Ib in Germany.</span>
-            <span class="paper-authors">Ndabashinze R, Dey RC, Brar M, Sah S, Mehta R, Bushi G, Balaraman AK, Pandey S, Verma A.</span>
-            <span class="paper-journal">New Microbes New Infect. 2024 Nov 6;62:101527. doi: 10.1016/j.nmni.2024.101527. PMID: 39624229.</span>
-          </li>
-          <li>
-            <span class="paper-title">First human infection with influenza A(H1N1) variant virus in Vietnam.</span>
-            <span class="paper-authors">Bansal NK, Sah S, Shabil M, Verma A, Ndabashinze R.</span>
-            <span class="paper-journal">New Microbes New Infect. 2024 Oct 30;62:101519. doi: 10.1016/j.nmni.2024.101519. PMID: 39552928.</span>
-          </li>
-          <li>
-            <span class="paper-title">Zambia's first Mpox case: An emerging challenge in Southern Africa amid a global health crisis.</span>
-            <span class="paper-authors">Ndabashinze R, Simiyu BW, Sah S, Mehta R, Bushi G, Balaraman AK, Pandey S, Brar M, Verma A.</span>
-            <span class="paper-journal">New Microbes New Infect. 2024 Nov 14;62:101536. doi: 10.1016/j.nmni.2024.101536. PMID: 39649020.</span>
-          </li>
-          <li>
-            <span class="paper-title">Reversible Cerebral Vasoconstriction Syndrome Following Blood Transfusion in a Patient With Chronic Anemia: A Case Report.</span>
-            <span class="paper-authors">Verma A, Sharma G, Singh A, Gupta H, Singh DP, Gaidhane AM, Khatib MN, Bushi G, Sah S, Ndabashinze R.</span>
-            <span class="paper-journal">Clin Case Rep. 2024 Nov 27;12(12):e9618. doi: 10.1002/ccr3.9618. PMID: 39610984.</span>
-          </li>
-          <li>
-            <span class="paper-title">Determinants of neonatal mortality at Kamenge Teaching Hospital, Burundi: a prospective cohort study.</span>
-            <span class="paper-authors">Ndayishimiye JC, Iradukunda A, Ndabashinze R, Manirabaruta M, Ahishakiye A, Mbele W, de Dieu Nkurunziza J, Habonimana D.</span>
-            <span class="paper-journal">BMC Public Health. 2025 Nov 24;25(1):4106. doi: 10.1186/s12889-025-25468-0. PMID: 41286725.</span>
-          </li>
-          <li>
-            <span class="paper-title">Necrotic erythema nodosum leprosum - A case of severe lepromatous reaction in a multibacillary leprosy patient.</span>
-            <span class="paper-authors">Nagarajan HDP, Kamaraj B, Selvanathan K, Kumar S, Gaidhane S, Sah S, Satapathy P, Mehta R, Ndabashinze R, Verma A.</span>
-            <span class="paper-journal">IDCases. 2025 Jan 14;39:e02152. doi: 10.1016/j.idcr.2025.e02152. PMID: 39896795.</span>
-          </li>
-          <li>
-            <span class="paper-title">Pan-Resistant Pseudomonas aeruginosa Septic Shock in a Critically Ill Patient: A Case Report.</span>
-            <span class="paper-authors">Surana A, Bhattacharya R, Javady H, Bhullar G, Satapathy P, Kumar A, Lakhanpal S, Satapathy P, Arcot R, Ndabashinze R, Verma A.</span>
-            <span class="paper-journal">Clin Med Insights Case Rep. 2026 Jan 21;19:11795476251411094. doi: 10.1177/11795476251411094. PMID: 41589298.</span>
-          </li>
-        </ol>
+    <section id="about" class="py-20 bg-white px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4 text-slate-600 leading-relaxed">
+                    <p>I am a researcher focused on bridging the gap between clinical trial activity and actual disease burden. My recent work examines the German healthcare landscape and the structural mismatches in research prioritization.</p>
+                    <p>My vision is to utilize computational models and GBD data to inform better policy initiatives and pharmaceutical investments.</p>
+                </div>
+                <div class="bg-slate-100 p-8 rounded-3xl">
+                    <h3 class="font-bold mb-4 text-slate-900 italic">"How can we align clinical research with the true needs of the population?"</h3>
+                    <p class="text-sm text-slate-500">— My Research Philosophy</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2 id="writing">Writing</h2>
-        <p>Notes and project writeups.</p>
-        <p><a href="/writing/">Go to Writing</a></p>
+    <section id="research" class="py-20 px-6 bg-slate-50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Research Focus</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <i class="fas fa-chart-line text-blue-600 text-2xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">GBD Analysis</h3>
+                    <p class="text-slate-500 text-sm">Analyzing Global Burden of Disease (GBD) data to identify under-researched medical conditions.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <i class="fas fa-microscope text-blue-600 text-2xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Clinical Trials</h3>
+                    <p class="text-slate-500 text-sm">Mapping trial activity in Germany against DALYs to uncover market biases and policy gaps.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <i class="fas fa-pills text-blue-600 text-2xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Health Economics</h3>
+                    <p class="text-slate-500 text-sm">Studying pharmaceutical profitability and technical feasibility as drivers of innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2 id="contact">Contact</h2>
-        <p>Email: <a href="mailto:alex@example.com">alex@example.com</a></p>
-      </section>
-    </main>
+    <footer id="contact" class="py-20 px-6 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
+            <p class="text-slate-400 mb-8">Open for collaborations in medical data science and public health policy.</p>
+            <div class="flex justify-center space-x-6 text-2xl mb-12">
+                <a href="https://github.com/RodrigueNdab" class="hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:your-email@example.com" class="hover:text-blue-400 transition"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-xs text-slate-500 uppercase tracking-widest">&copy; 2026 Rodrigue Ndabashinze. Built with Precision.</p>
+        </div>
+    </footer>
 
-    <footer class="footer">© 2026 Rodrigue Ndabashinze</footer>
-  </body>
+    <script>
+        // Simple Theme Toggle
+        const btn = document.getElementById('theme-toggle');
+        const icon = btn.querySelector('i');
+        btn.onclick = () => {
+            document.body.classList.toggle('dark');
+            // Toggle icon or colors if needed
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        };
+    </script>
+</body>
 </html>
