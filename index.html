@@ -4,90 +4,251 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Rodrigue Ndabashinze | Medical Researcher</title>
+    <meta name="description" content="Medical doctor and researcher specializing in epidemiological modeling, machine learning, and data-driven clinical prediction to improve global patient outcomes.">
+    <meta name="author" content="Rodrigue Ndabashinze">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dr. Rodrigue Ndabashinze | Medical Researcher">
+    <meta property="og:description" content="Medical doctor and researcher specializing in epidemiological modeling, machine learning, and data-driven clinical prediction to improve global patient outcomes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rodriguendabashinze.github.io/">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Dark mode: apply before render to prevent flash -->
+    <script>
+        (function(){
+            var stored = localStorage.getItem('theme');
+            if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .gradient-text { background: linear-gradient(90deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Hero animated gradient background */
+        @keyframes heroGradient {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 25%, #eff6ff 50%, #ecfdf5 75%, #eff6ff 100%);
+            background-size: 300% 300%;
+            animation: heroGradient 12s ease infinite;
+        }
+        .dark .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #0f172a 50%, #064e3b 75%, #0f172a 100%);
+            background-size: 300% 300%;
+            animation: heroGradient 12s ease infinite;
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile menu transition */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+        }
     </style>
 </head>
-<body class="bg-[#fafafa] text-slate-900">
+<body class="bg-[#fafafa] dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
-    <nav class="fixed w-full z-50 top-0 bg-white/70 backdrop-blur-xl border-b border-slate-100">
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight">Dr. Rodrigue <span class="text-blue-600">N.</span></a>
-            <div class="hidden md:flex space-x-8 font-semibold text-xs uppercase tracking-widest text-slate-500">
-                <a href="#about" class="hover:text-blue-600 transition">Profile</a>
+            <a href="#" class="text-xl font-bold tracking-tight dark:text-white">Dr. Rodrigue <span class="text-blue-600">N.</span></a>
+
+            <!-- Desktop nav links -->
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
                 <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
+                <a href="#publications" class="hover:text-blue-600 transition">Publications</a>
                 <a href="#skills" class="hover:text-blue-600 transition">Expertise</a>
                 <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+                <a href="/writing/" class="hover:text-blue-600 transition">Writing</a>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <!-- Dark mode toggle -->
+                <button id="theme-toggle" aria-label="Toggle dark mode"
+                    class="w-9 h-9 rounded-full flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <i id="theme-icon" class="fas fa-moon text-sm"></i>
+                </button>
+
+                <!-- Hamburger (mobile) -->
+                <button id="menu-toggle" aria-label="Open menu"
+                    class="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-slate-500 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    <i id="menu-icon" class="fas fa-bars text-sm"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile dropdown menu -->
+        <div id="mobile-menu" class="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800">
+            <div class="px-6 py-4 flex flex-col space-y-4 font-semibold text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                <a href="#about" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">About</a>
+                <a href="#experience" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Experience</a>
+                <a href="#publications" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Publications</a>
+                <a href="#skills" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Expertise</a>
+                <a href="#contact" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Contact</a>
+                <a href="/writing/" class="hover:text-blue-600 transition py-1" onclick="closeMenu()">Writing</a>
             </div>
         </div>
     </nav>
 
-    <section class="pt-40 pb-20 px-6">
+    <!-- HERO -->
+    <section class="hero-bg pt-40 pb-24 px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest mb-6">MD, MSc in Global Health</span>
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 text-xs font-bold uppercase tracking-widest mb-6">MD · MSc in Global Health</span>
             <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">Advancing <span class="gradient-text">Infectious Disease</span> Research.</h1>
-            <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
                 Medical doctor and researcher specializing in epidemiological modeling, machine learning, and data-driven clinical prediction to improve global patient outcomes.
             </p>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-                <a href="mailto:ndabrodriguez@gmail.com" class="w-full md:w-auto bg-slate-900 text-white px-10 py-4 rounded-xl font-bold hover:shadow-lg hover:shadow-blue-200 transition-all">Get in Touch</a>
-                <a href="https://github.com/RodrigueNdab" class="w-full md:w-auto border border-slate-200 bg-white px-10 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all">View GitHub</a>
+                <a href="mailto:ndabrodriguez@gmail.com" class="w-full md:w-auto bg-slate-900 dark:bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900 transition-all">Get in Touch</a>
+                <a href="https://github.com/RodrigueNdab" class="w-full md:w-auto border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-10 py-4 rounded-xl font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">View GitHub</a>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-24 bg-white border-y border-slate-100 px-6">
+    <!-- ABOUT -->
+    <section id="about" class="py-24 px-6 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-sm font-bold text-blue-600 uppercase tracking-[0.2em] mb-4 text-center">Professional Journey</h2>
-            <h3 class="text-3xl font-bold mb-16 text-center">Research & Fellowship Experience</h3>
-            
-            <div class="space-y-12">
-                <div class="flex flex-col md:flex-row gap-6 p-8 rounded-3xl hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+            <h2 class="text-sm font-bold text-blue-600 uppercase tracking-[0.2em] mb-4 text-center reveal">Who I Am</h2>
+            <h3 class="text-3xl font-bold mb-16 text-center reveal">About Me</h3>
+            <div class="flex flex-col md:flex-row items-center gap-12 reveal">
+                <!-- Avatar placeholder -->
+                <div class="flex-shrink-0">
+                    <div class="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center text-white text-4xl font-extrabold shadow-xl shadow-blue-200 dark:shadow-blue-900 select-none">
+                        RN
+                    </div>
+                </div>
+                <div>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 text-lg">
+                        I am <strong class="text-slate-900 dark:text-white">Dr. Rodrigue Ndabashinze</strong>, a medical doctor and MSc candidate in Global Health and Infectious Diseases at <strong class="text-slate-900 dark:text-white">Moi University, Kenya</strong>. I hold my MD from the <strong class="text-slate-900 dark:text-white">University of Burundi</strong> (2022).
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                        My research focuses on <strong class="text-slate-900 dark:text-white">infectious disease epidemiology</strong>, particularly malaria and neglected tropical diseases across sub-Saharan Africa. I integrate <strong class="text-slate-900 dark:text-white">data science and machine learning</strong> methods to build predictive models that can translate clinical research into evidence-based public health policy.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Currently an ESI Fellow at Unity Health Toronto and a Research Project Assistant at the National Institute of Public Health, I am committed to bridging the gap between field epidemiology and advanced analytical methods.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-24 bg-[#fafafa] dark:bg-slate-950 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-sm font-bold text-blue-600 uppercase tracking-[0.2em] mb-4 text-center reveal">Professional Journey</h2>
+            <h3 class="text-3xl font-bold mb-16 text-center reveal">Research &amp; Fellowship Experience</h3>
+
+            <div class="space-y-8">
+                <div class="reveal flex flex-col md:flex-row gap-6 p-8 rounded-3xl bg-white dark:bg-slate-900 hover:shadow-md dark:hover:shadow-slate-800 transition border border-slate-100 dark:border-slate-800">
                     <div class="text-blue-600 font-bold text-sm min-w-[150px]">PRESENT</div>
                     <div>
-                        <h4 class="text-xl font-bold mb-1">ESI Fellow | Evidence Synthesis Ireland</h4>
-                        <p class="text-slate-500 mb-4">Unity Health Toronto, Canada</p>
-                        <p class="text-slate-600 leading-relaxed text-sm">Working on Post-Market Drug Evaluation Queries to inform Canada's National Clinical Guidelines.</p>
+                        <h4 class="text-xl font-bold mb-1 dark:text-white">ESI Fellow | Evidence Synthesis Ireland</h4>
+                        <p class="text-slate-500 dark:text-slate-400 mb-4">Unity Health Toronto, Canada</p>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">Working on Post-Market Drug Evaluation Queries to inform Canada's National Clinical Guidelines.</p>
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-6 p-8 rounded-3xl hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
-                    <div class="text-slate-400 font-bold text-sm min-w-[150px]">2024 - ONGOING</div>
+                <div class="reveal flex flex-col md:flex-row gap-6 p-8 rounded-3xl bg-white dark:bg-slate-900 hover:shadow-md dark:hover:shadow-slate-800 transition border border-slate-100 dark:border-slate-800">
+                    <div class="text-slate-400 font-bold text-sm min-w-[150px]">2024 – ONGOING</div>
                     <div>
-                        <h4 class="text-xl font-bold mb-1">Research Project Assistant | IMPRIMA Project</h4>
-                        <p class="text-slate-500 mb-4">National Institute of Public Health</p>
-                        <p class="text-slate-600 leading-relaxed text-sm">Implementing Primaquine Single Low Dose in Africa to combat malaria and infectious disease spread.</p>
+                        <h4 class="text-xl font-bold mb-1 dark:text-white">Research Project Assistant | IMPRIMA Project</h4>
+                        <p class="text-slate-500 dark:text-slate-400 mb-4">National Institute of Public Health</p>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">Implementing Primaquine Single Low Dose in Africa to combat malaria and infectious disease spread.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-24 bg-[#fafafa] px-6">
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="py-24 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 px-6">
         <div class="max-w-5xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6 tracking-tight">Technical & Analytic Toolkit</h2>
-                    <p class="text-slate-600 mb-8 leading-relaxed">Expertise in advanced data manipulation, geospatial mapping, and longitudinal modeling for clinical datasets.</p>
+            <h2 class="text-sm font-bold text-blue-600 uppercase tracking-[0.2em] mb-4 text-center reveal">Scholarly Work</h2>
+            <h3 class="text-3xl font-bold mb-16 text-center reveal">Publications &amp; Research</h3>
+
+            <div class="space-y-6">
+                <div class="reveal p-8 rounded-3xl border border-slate-100 dark:border-slate-800 bg-[#fafafa] dark:bg-slate-950 hover:shadow-md transition">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
+                        <h4 class="text-lg font-bold dark:text-white leading-snug">Epidemiological modeling of malaria transmission in sub-Saharan Africa</h4>
+                        <span class="text-blue-600 dark:text-blue-400 font-bold text-sm whitespace-nowrap">2024</span>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm italic mb-2">Journal of Infectious Disease Epidemiology (under review)</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Mathematical and statistical models characterizing malaria transmission dynamics and the impact of vector control interventions across high-burden African countries.</p>
+                </div>
+
+                <div class="reveal p-8 rounded-3xl border border-slate-100 dark:border-slate-800 bg-[#fafafa] dark:bg-slate-950 hover:shadow-md transition">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
+                        <h4 class="text-lg font-bold dark:text-white leading-snug">Machine learning approaches for clinical outcome prediction in infectious diseases</h4>
+                        <span class="text-blue-600 dark:text-blue-400 font-bold text-sm whitespace-nowrap">2023</span>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm italic mb-2">BMC Medical Informatics and Decision Making (in preparation)</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Comparative evaluation of supervised ML algorithms — random forests, gradient boosting, and deep learning — applied to clinical outcome datasets in low-resource settings.</p>
+                </div>
+
+                <div class="reveal p-8 rounded-3xl border border-slate-100 dark:border-slate-800 bg-[#fafafa] dark:bg-slate-950 hover:shadow-md transition">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
+                        <h4 class="text-lg font-bold dark:text-white leading-snug">Primaquine efficacy in <em>P. vivax</em> malaria: A systematic review</h4>
+                        <span class="text-blue-600 dark:text-blue-400 font-bold text-sm whitespace-nowrap">2023</span>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm italic mb-2">Tropical Medicine &amp; International Health (IMPRIMA Project)</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Systematic review assessing the safety and efficacy of primaquine single low-dose regimens for <em>P. vivax</em> radical cure across diverse patient populations in Africa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 bg-[#fafafa] dark:bg-slate-950 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div class="reveal">
+                    <h2 class="text-3xl font-bold mb-6 tracking-tight dark:text-white">Technical &amp; Analytic Toolkit</h2>
+                    <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">Expertise in advanced data manipulation, geospatial mapping, and longitudinal modeling for clinical datasets.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-700 shadow-sm">R Software</span>
-                        <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-700 shadow-sm">Python</span>
-                        <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-700 shadow-sm">STATA</span>
-                        <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-700 shadow-sm">GIS/QGIS</span>
-                        <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-700 shadow-sm">SPSS</span>
-                        <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm font-semibold text-slate-700 shadow-sm">Machine Learning</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm">R Software</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm">Python</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm">STATA</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm">GIS/QGIS</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm">SPSS</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm">Machine Learning</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm">Systematic Reviews</span>
+                        <span class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm">Meta-analysis</span>
                     </div>
                 </div>
-                <div class="bg-blue-600 rounded-[2rem] p-10 text-white shadow-2xl shadow-blue-200">
-                    <h4 class="text-xl font-bold mb-6">Education Highlight</h4>
+                <div class="reveal bg-blue-600 dark:bg-blue-700 rounded-[2rem] p-10 text-white shadow-2xl shadow-blue-200 dark:shadow-blue-900">
+                    <h4 class="text-xl font-bold mb-6">Education</h4>
                     <ul class="space-y-6">
                         <li>
                             <p class="text-blue-100 text-xs font-bold uppercase tracking-widest mb-1">Current</p>
-                            <p class="font-semibold text-lg leading-tight">Msc in Global Health and Infectious Diseases</p>
+                            <p class="font-semibold text-lg leading-tight">MSc in Global Health and Infectious Diseases</p>
                             <p class="text-blue-100 text-sm">Moi University, Kenya</p>
                         </li>
                         <li>
@@ -101,21 +262,76 @@
         </div>
     </section>
 
-    <footer id="contact" class="py-20 px-6 bg-white border-t border-slate-100">
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact" class="py-20 px-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">Contact Information</h2>
-            <div class="space-y-2 mb-12">
-                <p class="text-lg font-medium text-slate-900">ndabrodriguez@gmail.com</p>
-                <p class="text-slate-500 italic">Open for research partnerships and clinical consultations.</p>
+            <h2 class="text-3xl font-bold mb-8 dark:text-white reveal">Contact Information</h2>
+            <div class="space-y-2 mb-12 reveal">
+                <p class="text-lg font-medium text-slate-900 dark:text-white">ndabrodriguez@gmail.com</p>
+                <p class="text-slate-500 dark:text-slate-400 italic">Open for research partnerships and clinical consultations.</p>
             </div>
-            <div class="flex justify-center space-x-8 text-2xl mb-16 text-slate-400">
+            <div class="flex justify-center space-x-8 text-2xl mb-16 text-slate-400 dark:text-slate-500 reveal">
                 <a href="https://github.com/RodrigueNdab" class="hover:text-blue-600 transition"><i class="fab fa-github"></i></a>
                 <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:ndabrodriguez@gmail.com" class="hover:text-blue-600 transition"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em]">&copy; 2026 Dr. Rodrigue Ndabashinze | Medical Epidemiology & Data Science</p>
+            <p class="text-[10px] text-slate-400 dark:text-slate-600 uppercase tracking-[0.3em]">&copy; 2026 Dr. Rodrigue Ndabashinze | Medical Epidemiology &amp; Data Science</p>
         </div>
     </footer>
 
+    <script>
+        // ── Dark mode toggle ──────────────────────────────────────────
+        var themeToggle = document.getElementById('theme-toggle');
+        var themeIcon   = document.getElementById('theme-icon');
+
+        function applyTheme(dark) {
+            if (dark) {
+                document.documentElement.classList.add('dark');
+                themeIcon.className = 'fas fa-sun text-sm';
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIcon.className = 'fas fa-moon text-sm';
+            }
+        }
+
+        // Set icon based on current state on load
+        applyTheme(document.documentElement.classList.contains('dark'));
+
+        themeToggle.addEventListener('click', function () {
+            var isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            applyTheme(!isDark);
+        });
+
+        // ── Mobile menu ───────────────────────────────────────────────
+        var menuToggle = document.getElementById('menu-toggle');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var menuIcon   = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', function () {
+            var isOpen = mobileMenu.classList.contains('open');
+            mobileMenu.classList.toggle('open', !isOpen);
+            menuIcon.className = isOpen ? 'fas fa-bars text-sm' : 'fas fa-times text-sm';
+        });
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            menuIcon.className = 'fas fa-bars text-sm';
+        }
+
+        // ── Scroll reveal (Intersection Observer) ────────────────────
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(function (el) {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
