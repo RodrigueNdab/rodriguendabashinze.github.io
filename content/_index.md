@@ -57,6 +57,16 @@ sections:
     design:
       columns: '2'
       view: citation
+  - block: markdown
+    id: talks
+    content:
+      title: Talks & Presentations
+      text: |
+        - **Reliable Subgroup Identification and Analysis – Results of the GMDS Biostatistics Competition 2026.** Invited presentation with Team CRAKDK (3rd place of 17 teams; one of 5 teams invited on-site). 47th ISCB Annual Conference joint with the 71st GMDS Annual Conference, Freiburg im Breisgau, Germany, Sept 27–Oct 1, 2026.
+        - **Updating the evidence base for neonatal therapeutic hypothermia: trial integrity, equity, and the case for individual participant data.** Awarded Neonatal Resuscitation Symposium (NRS) Scholar to present at the Emerging Neonatal Resuscitation Science Research Colloquium, 9th Annual Neonatal Resuscitation Symposium, Indiana University School of Medicine, Indianapolis, IN, Sept 10, 2026. [Program PDF](/media/Colloquium_Program_final.pdf) · [Reference page](https://medicine.iu.edu/pediatrics/specialties/neonatal-perinatal/education/resuscitation-symposium)
+        - **Artificial intelligence in IPD synthesis.** Invited speaker, SMART-IPD (Strengthening Meta-Analysis Research Through Individual Participant Data) workshop, SRSM (Society for Research Synthesis Methodology) Annual Meeting, Chania, Crete, Greece, June 9, 2026. [Program PDF](/media/SMART-IPD_symposium_program.pdf) · [Presenting photo](/media/crete_presenting_photo.png) · [Group conference photo](/media/crete_group_photo.png)
+    design:
+      columns: '1'
   - block: collection
     id: posts
     content:
