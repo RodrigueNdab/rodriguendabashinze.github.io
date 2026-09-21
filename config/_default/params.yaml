@@ -7,8 +7,8 @@
 
 appearance:
   mode: classic
-  theme_day: custom
-  theme_night: custom
+  theme_day: minimal
+  theme_night: dark
   font: custom
   font_size: M
 

@@ -42,31 +42,4 @@ My research interests span causal inference (target trial emulation, AIPW, IOSW 
 
 **I am open for research collaborations, evidence synthesis projects, and speaking invitations. Feel free to reach out!**
 
-<div class="container">
-  <div class="row justify-content-between">
-    <div class="col">
-      <h3>Experience</h3>
-        <ul class="fa-ul">
-        <li><span class="fa-li"><i class="fas fa-briefcase"></i></span>University Medical Center Rostock, 2025-present</li>
-        <li><span class="portrait-title"><h3>Rostock, Germany</h3></span></li>
-        <li><span class="fa-li"><i class="fas fa-briefcase"></i></span>Julius Center, UMC Utrecht, Jan-Sept 2025</li>
-        <li><span class="portrait-title"><h3>Utrecht, Netherlands</h3></span></li>
-        <li><span class="fa-li"><i class="fas fa-briefcase"></i></span>Saint John Clinic, Jun 2022-Sept 2023</li>
-        <li><span class="portrait-title"><h3>Bujumbura, Burundi</h3></span></li>
-        </ul>
-    </div>
-    <div class="col">
-      <h3>Education</h3>
-        <ul class="fa-ul">
-        <li><span class="fa-li"><i class="fas fa-graduation-cap"></i></span>MSc Epidemiology (Distinction), 2025</li>
-        <li><span class="portrait-title"><h3>University of Antwerp</h3></li>
-        <li><span class="fa-li"><i class="fas fa-graduation-cap"></i></span>MSc Global Health & Infectious Diseases, 2023</li>
-        <li><span class="portrait-title"><h3>Moi University, Kenya</h3></li>
-        <li><span class="fa-li"><i class="fas fa-graduation-cap"></i></span>Doctor of Medicine (MD) (Distinction), 2022</li>
-        <li><span class="portrait-title"><h3>University of Burundi</h3></li>
-        </ul>
-    </div>
-  </div>
-</div>
-
 {style="text-align: justify;"}
