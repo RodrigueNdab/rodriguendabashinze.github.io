@@ -1,34 +1,6 @@
-/* Use a consistent readable content width for plain homepage sections. */
-#experience .container,
-#skills .container,
-#awards .container,
-#talks .container,
-#contact .container {
-  max-width: 1140px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
+/* Keep homepage Markdown blocks visually consistent:
+   centered section titles and centered, readable content. */
 
-/* Align Markdown-section headings with their content. */
-#experience .section-heading,
-#skills .section-heading,
-#awards .section-heading,
-#talks .section-heading,
-#contact .section-heading,
-#experience .section-heading h1,
-#experience .section-heading h2,
-#skills .section-heading h1,
-#skills .section-heading h2,
-#awards .section-heading h1,
-#awards .section-heading h2,
-#talks .section-heading h1,
-#talks .section-heading h2,
-#contact .section-heading h1,
-#contact .section-heading h2 {
-  text-align: left !important;
-}
-
-/* Keep text content left-aligned. */
 #experience .article-style,
 #experience .prose,
 #experience .markdown,
@@ -44,24 +16,15 @@
 #contact .article-style,
 #contact .prose,
 #contact .markdown {
-  text-align: left !important;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-/* Keep smaller Markdown headings readable rather than centred. */
-#experience h1,
-#experience h2,
-#experience h3,
-#skills h1,
-#skills h2,
-#skills h3,
-#awards h1,
-#awards h2,
-#awards h3,
+/* Keep individual headings in Talks aligned consistently. */
 #talks h1,
 #talks h2,
-#talks h3,
-#contact h1,
-#contact h2,
-#contact h3 {
-  text-align: left !important;
+#talks h3 {
+  text-align: center;
 }
