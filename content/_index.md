@@ -75,7 +75,7 @@ sections:
       columns: '2'
       view: citation
 
-    - block: markdown
+  - block: markdown
     id: talks
     content:
       title: Talks & Presentations
@@ -106,6 +106,7 @@ sections:
         ![Rodrigue Ndabashinze presenting at the SMART-IPD workshop in Crete](/media/crete_presenting_photo.png)
 
         ![SMART-IPD workshop group photograph, Crete](/media/crete_group_photo.png)
+
         ### CTNR Summer School 2026: Research profile and therapeutic hypothermia evidence synthesis
 
         **Participant research presentation**, CTNR Summer School 2026.
@@ -116,57 +117,15 @@ sections:
         My research profile focused on therapeutic hypothermia for newborns with moderate or severe encephalopathy; systematic reviews and meta-analyses; trial integrity; health equity; and the use of artificial intelligence and causal inference in evidence synthesis.
 
         [View the CTNR Summer School programme (PDF)](/uploads/CTNR_Summer_School_2026_Programme.pdf) · [CTNR Summer School 2026](https://ctnr.med.uni-rostock.de/ctnr-summer-school-2026)
-<div class="ctnr-carousel" aria-label="CTNR Summer School 2026 photo gallery">
-  <button class="ctnr-carousel-button ctnr-prev" type="button" aria-label="Previous CTNR photo">&#10094;</button>
 
-  <figure class="ctnr-slide is-active">
-    <img src="/media/ctnr_summer_school_presentation.jpg" alt="Rodrigue Ndabashinze presenting at the CTNR Summer School 2026">
-    <figcaption>Research presentation at the CTNR Summer School 2026, Gut Gremmelin.</figcaption>
-  </figure>
+        ![Rodrigue Ndabashinze presenting at the CTNR Summer School 2026](/media/ctnr_summer_school_presentation.jpg)
 
-  <figure class="ctnr-slide">
-    <img src="/media/ctnr_summer_school_group.jpg" alt="CTNR Summer School 2026 group photograph at Gut Gremmelin">
-    <figcaption>CTNR Summer School 2026 participants at Gut Gremmelin.</figcaption>
-  </figure>
+        ![CTNR Summer School 2026 group photograph at Gut Gremmelin](/media/ctnr_summer_school_group.jpg)
 
-  <figure class="ctnr-slide">
-    <img src="/media/ctnr_summer_school_small_group.jpg" alt="CTNR Summer School participants beside a CTNR research board">
-    <figcaption>CTNR Summer School discussions and collaborative research activities.</figcaption>
-  </figure>
-
-  <button class="ctnr-carousel-button ctnr-next" type="button" aria-label="Next CTNR photo">&#10095;</button>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".ctnr-carousel").forEach(function (carousel) {
-    const slides = carousel.querySelectorAll(".ctnr-slide");
-    const previous = carousel.querySelector(".ctnr-prev");
-    const next = carousel.querySelector(".ctnr-next");
-    let current = 0;
-
-    function showSlide(index) {
-      slides.forEach(function (slide, i) {
-        slide.classList.toggle("is-active", i === index);
-      });
-    }
-
-    previous.addEventListener("click", function () {
-      current = (current - 1 + slides.length) % slides.length;
-      showSlide(current);
-    });
-
-    next.addEventListener("click", function () {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    });
-  });
-});
-</script>
+        ![CTNR Summer School participants and CTNR research activity](/media/ctnr_summer_school_small_group.jpg)
     design:
       columns: '1'
-      text_align: left
-      
+
   - block: markdown
     id: contact
     content:
