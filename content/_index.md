@@ -80,14 +80,16 @@ sections:
     content:
       title: Talks & Presentations
       text: |-
-        ### Reliable Subgroup Identification and Analysis – Results of the GMDS Biostatistics Competition 2026
+        **Reliable Subgroup Identification and Analysis – Results of the GMDS Biostatistics Competition 2026**
 
         **Invited presentation with Team CRAKDK** — third place among 17 teams and one of five teams invited to present on site.
 
         **47th ISCB Annual Conference, jointly with the 71st GMDS Annual Conference**  
         Freiburg im Breisgau, Germany · September 27–October 1, 2026
 
-        ### Updating the evidence base for neonatal therapeutic hypothermia: trial integrity, equity, and the case for individual participant data
+        ---
+
+        **Updating the evidence base for neonatal therapeutic hypothermia: trial integrity, equity, and the case for individual participant data**
 
         **Neonatal Resuscitation Symposium (NRS) Scholar.** Selected to present at the Emerging Neonatal Resuscitation Science Research Colloquium, held as part of the **9th Annual Neonatal Resuscitation Symposium** at Indiana University School of Medicine.
 
@@ -95,7 +97,9 @@ sections:
 
         [View the colloquium programme (PDF)](/uploads/Colloquium_Program_final.pdf) · [NRS Symposium information](https://medicine.iu.edu/pediatrics/specialties/neonatal-perinatal/education/resuscitation-symposium)
 
-        ### Artificial intelligence in IPD synthesis
+        ---
+
+        **Artificial intelligence in IPD synthesis**
 
         **Invited speaker**, SMART-IPD (Strengthening Meta-Analysis Research Through Individual Participant Data) workshop, at the **Society for Research Synthesis Methodology (SRSM) Annual Meeting**.
 
@@ -107,7 +111,9 @@ sections:
 
         ![SMART-IPD workshop group photograph, Crete](/media/crete_group_photo.png)
 
-        ### CTNR Summer School 2026: Research profile and therapeutic hypothermia evidence synthesis
+        ---
+
+        **CTNR Summer School 2026: Research profile and therapeutic hypothermia evidence synthesis**
 
         **Participant research presentation**, CTNR Summer School 2026.
 
