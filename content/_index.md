@@ -118,11 +118,11 @@ sections:
 
         [View the CTNR Summer School programme (PDF)](/uploads/CTNR_Summer_School_2026_Programme.pdf) · [CTNR Summer School 2026](https://ctnr.med.uni-rostock.de/ctnr-summer-school-2026)
 
-        ![Rodrigue Ndabashinze presenting at the CTNR Summer School 2026](/media/ctnr_summer_school_presentation.jpg)
+        ![Rodrigue Ndabashinze presenting at the CTNR Summer School 2026](/media/ctnr_summer_school_presentation.JPG)
 
         ![CTNR Summer School 2026 group photograph at Gut Gremmelin](/media/ctnr_summer_school_group.jpg)
 
-        ![CTNR Summer School participants and CTNR research activity](/media/ctnr_summer_school_small_group.jpg)
+        ![CTNR Summer School participants and CTNR research activity](/media/ctnr_summer_school_small_group.JPG)
     design:
       columns: '1'
 
