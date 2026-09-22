@@ -75,29 +75,98 @@ sections:
       columns: '2'
       view: citation
 
-  - block: markdown
+    - block: markdown
     id: talks
     content:
       title: Talks & Presentations
       text: |-
-        ### Smart IPD Symposium
+        ### Reliable Subgroup Identification and Analysis – Results of the GMDS Biostatistics Competition 2026
 
-        **Invited presentation:** Clinical trials, individual participant data, and AI-enabled evidence synthesis.
+        **Invited presentation with Team CRAKDK** — third place among 17 teams and one of five teams invited to present on site.
 
-        [View the symposium programme](/uploads/SMART-IPD_symposium_program.pdf)
+        **47th ISCB Annual Conference, jointly with the 71st GMDS Annual Conference**  
+        Freiburg im Breisgau, Germany · September 27–October 1, 2026
 
-        ![Presenting at the Smart IPD Symposium](/media/crete_presenting_photo.png)
+        ### Updating the evidence base for neonatal therapeutic hypothermia: trial integrity, equity, and the case for individual participant data
 
-        ### Colloquium Presentation
+        **Neonatal Resuscitation Symposium (NRS) Scholar.** Selected to present at the Emerging Neonatal Resuscitation Science Research Colloquium, held as part of the **9th Annual Neonatal Resuscitation Symposium** at Indiana University School of Medicine.
 
-        **Presentation:** Methods and applications in clinical research, causal inference, and evidence synthesis.
+        Indianapolis, Indiana, United States · September 10, 2026
 
-        [View the colloquium programme](/uploads/Colloquium_Program_final.pdf)
+        [View the colloquium programme (PDF)](/uploads/Colloquium_Program_final.pdf) · [NRS Symposium information](https://medicine.iu.edu/pediatrics/specialties/neonatal-perinatal/education/resuscitation-symposium)
 
-        ![Colloquium group photo](/media/crete_group_photo.png)
+        ### Artificial intelligence in IPD synthesis
+
+        **Invited speaker**, SMART-IPD (Strengthening Meta-Analysis Research Through Individual Participant Data) workshop, at the **Society for Research Synthesis Methodology (SRSM) Annual Meeting**.
+
+        Chania, Crete, Greece · June 9, 2026
+
+        [View the SMART-IPD workshop programme (PDF)](/uploads/SMART-IPD_symposium_program.pdf)
+
+        ![Rodrigue Ndabashinze presenting at the SMART-IPD workshop in Crete](/media/crete_presenting_photo.png)
+
+        ![SMART-IPD workshop group photograph, Crete](/media/crete_group_photo.png)
+        ### CTNR Summer School 2026: Research profile and therapeutic hypothermia evidence synthesis
+
+        **Participant research presentation**, CTNR Summer School 2026.
+
+        **Centre for Transdisciplinary Neurosciences Rostock (CTNR)**  
+        Gut Gremmelin, Germany · September 10–11, 2026
+
+        My research profile focused on therapeutic hypothermia for newborns with moderate or severe encephalopathy; systematic reviews and meta-analyses; trial integrity; health equity; and the use of artificial intelligence and causal inference in evidence synthesis.
+
+        [View the CTNR Summer School programme (PDF)](/uploads/CTNR_Summer_School_2026_Programme.pdf) · [CTNR Summer School 2026](https://ctnr.med.uni-rostock.de/ctnr-summer-school-2026)
+<div class="ctnr-carousel" aria-label="CTNR Summer School 2026 photo gallery">
+  <button class="ctnr-carousel-button ctnr-prev" type="button" aria-label="Previous CTNR photo">&#10094;</button>
+
+  <figure class="ctnr-slide is-active">
+    <img src="/media/ctnr_summer_school_presentation.jpg" alt="Rodrigue Ndabashinze presenting at the CTNR Summer School 2026">
+    <figcaption>Research presentation at the CTNR Summer School 2026, Gut Gremmelin.</figcaption>
+  </figure>
+
+  <figure class="ctnr-slide">
+    <img src="/media/ctnr_summer_school_group.jpg" alt="CTNR Summer School 2026 group photograph at Gut Gremmelin">
+    <figcaption>CTNR Summer School 2026 participants at Gut Gremmelin.</figcaption>
+  </figure>
+
+  <figure class="ctnr-slide">
+    <img src="/media/ctnr_summer_school_small_group.jpg" alt="CTNR Summer School participants beside a CTNR research board">
+    <figcaption>CTNR Summer School discussions and collaborative research activities.</figcaption>
+  </figure>
+
+  <button class="ctnr-carousel-button ctnr-next" type="button" aria-label="Next CTNR photo">&#10095;</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".ctnr-carousel").forEach(function (carousel) {
+    const slides = carousel.querySelectorAll(".ctnr-slide");
+    const previous = carousel.querySelector(".ctnr-prev");
+    const next = carousel.querySelector(".ctnr-next");
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle("is-active", i === index);
+      });
+    }
+
+    previous.addEventListener("click", function () {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+
+    next.addEventListener("click", function () {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+  });
+});
+</script>
     design:
       columns: '1'
-
+      text_align: left
+      
   - block: markdown
     id: contact
     content:
