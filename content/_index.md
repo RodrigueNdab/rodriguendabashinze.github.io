@@ -141,7 +141,7 @@ sections:
 
         I am open to **research collaborations**, evidence-synthesis projects, and speaking invitations. Feel free to reach out.
 
-        [GitHub](https://github.com/RodrigueNdab) · [LinkedIn](https://www.linkedin.com/in/rodrigue-ndabashinze-md-mph-msc-76093ab5/) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=nyuAn_kAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Rodrigue-Ndabashinze)
+        [University of Rostock profile](https://kjpp.med.uni-rostock.de/dr-anne-fink-2) · [GitHub](https://github.com/RodrigueNdab) · [LinkedIn](https://www.linkedin.com/in/rodrigue-ndabashinze-md-mph-msc-76093ab5/) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=nyuAn_kAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Rodrigue-Ndabashinze)
     design:
       columns: '1'
 ---
