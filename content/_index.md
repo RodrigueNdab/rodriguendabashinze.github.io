@@ -10,11 +10,12 @@ sections:
     content:
       title: Hi, I'm Rodrigue Ndabashinze
       username: admin
+
   - block: markdown
     id: experience
     content:
       title: Experience
-      text: |
+      text: |-
         **Data Manager, Clinical Trials Registries & AI** at University Medical Center Rostock (DZKJ), Oct 2025 to present
 
         **Evidence Synthesis Ireland Fellow** at University of Galway and Unity Health Toronto, Nov 2024 to Nov 2026
@@ -26,11 +27,12 @@ sections:
         **Part-time Clinician & Research Project Manager** at Burundi Red Cross, Jul 2022 to Mar 2023
     design:
       columns: '1'
+
   - block: markdown
     id: skills
     content:
       title: Skills
-      text: |
+      text: |-
         **Programming:** R, Python, Stata, SQL, Git and GitHub
 
         **Causal Inference:** Target trial emulation, AIPW, IOSW, DAGs, and propensity scores
@@ -44,11 +46,12 @@ sections:
         **Tools & Reproducibility:** Quarto, R Markdown, Docker, REDCap, OHDSI, and LaTeX
     design:
       columns: '1'
+
   - block: markdown
     id: awards
     content:
       title: Awards & Honours
-      text: |
+      text: |-
         **VLIR Flemish Scholarship:** Full scholarship for the MSc in Epidemiology at the University of Antwerp
 
         **EU Intra-Africa Academic Mobility Grant:** Support for the MSc in Global Health at Moi University
@@ -60,6 +63,7 @@ sections:
         **ESCMID Young Scientist Member:** Top 20 selection globally
     design:
       columns: '1'
+
   - block: collection
     id: publications
     content:
@@ -70,38 +74,40 @@ sections:
     design:
       columns: '2'
       view: citation
-    - block: markdown
-  id: talks
-  content:
-    title: Talks & Presentations
-    text: |-
-      ### Smart IPD Symposium
 
-      **Invited presentation:** Clinical trials, individual participant data, and AI-enabled evidence synthesis.
+  - block: markdown
+    id: talks
+    content:
+      title: Talks & Presentations
+      text: |-
+        ### Smart IPD Symposium
 
-      [View the symposium programme](/uploads/SMART-IPD_symposium_program.pdf)
+        **Invited presentation:** Clinical trials, individual participant data, and AI-enabled evidence synthesis.
 
-      ![Presenting at the Smart IPD Symposium](/media/crete_presenting_photo.png)
+        [View the symposium programme](/uploads/SMART-IPD_symposium_program.pdf)
 
-      ### Colloquium Presentation
+        ![Presenting at the Smart IPD Symposium](/media/crete_presenting_photo.png)
 
-      **Presentation:** Methods and applications in clinical research, causal inference, and evidence synthesis.
+        ### Colloquium Presentation
 
-      [View the colloquium programme](/uploads/Colloquium_Program_final.pdf)
+        **Presentation:** Methods and applications in clinical research, causal inference, and evidence synthesis.
 
-      ![Colloquium group photo](/media/crete_group_photo.png)
-  design:
-    columns: '1'
+        [View the colloquium programme](/uploads/Colloquium_Program_final.pdf)
+
+        ![Colloquium group photo](/media/crete_group_photo.png)
+    design:
+      columns: '1'
+
   - block: markdown
     id: contact
     content:
       title: Contact
       text: |-
-  **Email:** [rodrigue.ndabashinze@med.uni-rostock.de](mailto:rodrigue.ndabashinze@med.uni-rostock.de)
+        **Email:** [rodrigue.ndabashinze@med.uni-rostock.de](mailto:rodrigue.ndabashinze@med.uni-rostock.de)
 
-  I am open to **research collaborations**, evidence-synthesis projects, and speaking invitations. Feel free to reach out.
+        I am open to **research collaborations**, evidence-synthesis projects, and speaking invitations. Feel free to reach out.
 
-  [GitHub](https://github.com/RodrigueNdab) · [LinkedIn](https://www.linkedin.com/in/rodrigue-ndabashinze-md-mph-msc-76093ab5/) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=nyuAn_kAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Rodrigue-Ndabashinze)
+        [GitHub](https://github.com/RodrigueNdab) · [LinkedIn](https://www.linkedin.com/in/rodrigue-ndabashinze-md-mph-msc-76093ab5/) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=nyuAn_kAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Rodrigue-Ndabashinze)
     design:
       columns: '1'
 ---
