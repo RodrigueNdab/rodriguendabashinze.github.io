@@ -1,0 +1,12 @@
+/* Restrict alignment changes to the homepage Talks section */
+#talks .section-heading,
+#talks .section-heading h1,
+#talks .section-heading h2,
+#talks h1,
+#talks h2,
+#talks h3,
+#talks .article-style,
+#talks .prose,
+#talks .markdown {
+  text-align: left !important;
+}
