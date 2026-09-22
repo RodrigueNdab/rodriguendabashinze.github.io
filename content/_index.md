@@ -70,22 +70,38 @@ sections:
     design:
       columns: '2'
       view: citation
+    - block: markdown
+  id: talks
+  content:
+    title: Talks & Presentations
+    text: |-
+      ### Smart IPD Symposium
+
+      **Invited presentation:** Clinical trials, individual participant data, and AI-enabled evidence synthesis.
+
+      [View the symposium programme](/uploads/SMART-IPD_symposium_program.pdf)
+
+      ![Presenting at the Smart IPD Symposium](/media/crete_presenting_photo.png)
+
+      ### Colloquium Presentation
+
+      **Presentation:** Methods and applications in clinical research, causal inference, and evidence synthesis.
+
+      [View the colloquium programme](/uploads/Colloquium_Program_final.pdf)
+
+      ![Colloquium group photo](/media/crete_group_photo.png)
+  design:
+    columns: '1'
   - block: markdown
     id: contact
     content:
       title: Contact
-      text: |
-        **Email:** [rodrigue.ndabashinze@med.uni-rostock.de](mailto:rodrigue.ndabashinze@med.uni-rostock.de)
+      text: |-
+  **Email:** [rodrigue.ndabashinze@med.uni-rostock.de](mailto:rodrigue.ndabashinze@med.uni-rostock.de)
 
-        I am open for **research collaborations**, evidence synthesis projects, and speaking invitations. Feel free to reach out!
+  I am open to **research collaborations**, evidence-synthesis projects, and speaking invitations. Feel free to reach out.
 
-        [GitHub](https://github.com/RodrigueNdab)
-
-        [LinkedIn](https://www.linkedin.com/in/rodrigue-ndabashinze-md-mph-msc-76093ab5/)
-
-        [Google Scholar](https://scholar.google.com/citations?hl=en&user=nyuAn_kAAAAJ)
-
-        [ResearchGate](https://www.researchgate.net/profile/Rodrigue-Ndabashinze)
+  [GitHub](https://github.com/RodrigueNdab) · [LinkedIn](https://www.linkedin.com/in/rodrigue-ndabashinze-md-mph-msc-76093ab5/) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=nyuAn_kAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Rodrigue-Ndabashinze)
     design:
       columns: '1'
 ---
