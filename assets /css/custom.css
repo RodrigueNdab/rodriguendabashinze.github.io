@@ -1,4 +1,15 @@
-/* Align plain Markdown-section headings and content to the same container. */
+/* Use a consistent readable content width for plain homepage sections. */
+#experience .container,
+#skills .container,
+#awards .container,
+#talks .container,
+#contact .container {
+  max-width: 1140px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Align Markdown-section headings with their content. */
 #experience .section-heading,
 #skills .section-heading,
 #awards .section-heading,
@@ -13,7 +24,30 @@
 #talks .section-heading h1,
 #talks .section-heading h2,
 #contact .section-heading h1,
-#contact .section-heading h2,
+#contact .section-heading h2 {
+  text-align: left !important;
+}
+
+/* Keep text content left-aligned. */
+#experience .article-style,
+#experience .prose,
+#experience .markdown,
+#skills .article-style,
+#skills .prose,
+#skills .markdown,
+#awards .article-style,
+#awards .prose,
+#awards .markdown,
+#talks .article-style,
+#talks .prose,
+#talks .markdown,
+#contact .article-style,
+#contact .prose,
+#contact .markdown {
+  text-align: left !important;
+}
+
+/* Keep smaller Markdown headings readable rather than centred. */
 #experience h1,
 #experience h2,
 #experience h3,
@@ -29,30 +63,5 @@
 #contact h1,
 #contact h2,
 #contact h3 {
-  text-align: left !important;
-}
-
-/* Apply the same content width and horizontal alignment as the publication list. */
-#experience .container,
-#skills .container,
-#awards .container,
-#talks .container,
-#contact .container {
-  max-width: 1140px !important;
-  margin-right: auto !important;
-  margin-left: auto !important;
-}
-
-/* Keep all Markdown prose left-aligned. */
-#experience .article-style,
-#experience .prose,
-#skills .article-style,
-#skills .prose,
-#awards .article-style,
-#awards .prose,
-#talks .article-style,
-#talks .prose,
-#contact .article-style,
-#contact .prose {
   text-align: left !important;
 }
