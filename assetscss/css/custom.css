@@ -1,3 +1,15 @@
+/* Keep the Talks heading and content aligned on the same left edge */
+#talks .section-heading,
+#talks h1,
+#talks h2 {
+  text-align: left;
+}
+
+#talks .prose,
+#talks .markdown,
+#talks .article-style {
+  text-align: left;
+}
 .ctnr-carousel {
   position: relative;
   max-width: 980px;
