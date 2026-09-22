@@ -122,7 +122,7 @@ sections:
 
         My research profile focused on therapeutic hypothermia for newborns with moderate or severe encephalopathy; systematic reviews and meta-analyses; trial integrity; health equity; and the use of artificial intelligence and causal inference in evidence synthesis.
 
-        [View the CTNR Summer School programme (PDF)](/uploads/CTNR_Summer_School_2026_Programme.pdf) · [CTNR Summer School 2026](https://ctnr.med.uni-rostock.de/ctnr-summer-school-2026)
+        [View the CTNR Summer School programme (PDF)](/uploads/Programme_CTNR_Summerschool_2026.pdf) · [CTNR Summer School 2026](https://ctnr.med.uni-rostock.de/ctnr-summer-school-2026)
 
         ![Rodrigue Ndabashinze presenting at the CTNR Summer School 2026](/media/ctnr_summer_school_presentation.JPG)
 
