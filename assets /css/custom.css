@@ -1,12 +1,58 @@
-/* Restrict alignment changes to the homepage Talks section */
+/* Align plain Markdown-section headings and content to the same container. */
+#experience .section-heading,
+#skills .section-heading,
+#awards .section-heading,
 #talks .section-heading,
+#contact .section-heading,
+#experience .section-heading h1,
+#experience .section-heading h2,
+#skills .section-heading h1,
+#skills .section-heading h2,
+#awards .section-heading h1,
+#awards .section-heading h2,
 #talks .section-heading h1,
 #talks .section-heading h2,
+#contact .section-heading h1,
+#contact .section-heading h2,
+#experience h1,
+#experience h2,
+#experience h3,
+#skills h1,
+#skills h2,
+#skills h3,
+#awards h1,
+#awards h2,
+#awards h3,
 #talks h1,
 #talks h2,
 #talks h3,
+#contact h1,
+#contact h2,
+#contact h3 {
+  text-align: left !important;
+}
+
+/* Apply the same content width and horizontal alignment as the publication list. */
+#experience .container,
+#skills .container,
+#awards .container,
+#talks .container,
+#contact .container {
+  max-width: 1140px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* Keep all Markdown prose left-aligned. */
+#experience .article-style,
+#experience .prose,
+#skills .article-style,
+#skills .prose,
+#awards .article-style,
+#awards .prose,
 #talks .article-style,
 #talks .prose,
-#talks .markdown {
+#contact .article-style,
+#contact .prose {
   text-align: left !important;
 }
