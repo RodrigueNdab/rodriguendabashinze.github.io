@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Therapeutic hypothermia evidence base",
+    "description": "Updating the evidence for neonatal therapeutic hypothermia: trial integrity, equity, and individual participant data.",
+    "tags": ["Evidence synthesis", "IPD", "Meta-analysis"],
+    "link": "https://scholar.google.com/citations?hl=en&user=nyuAn_kAAAAJ"
+  },
+  {
+    "title": "Clinical trial registry harmonisation",
+    "description": "NLP-based mapping of clinical trial registry data to biomedical ontologies.",
+    "tags": ["NLP", "SapBERT", "FAISS", "MedDRA"],
+    "link": "https://github.com/RodrigueNdab"
+  },
+  {
+    "title": "Causal inference and ML in evidence synthesis",
+    "description": "Target trial emulation and causal methods applied to observational and trial data.",
+    "tags": ["Causal inference", "R", "Python"],
+    "link": "https://github.com/RodrigueNdab"
+  }
+]
